@@ -1,0 +1,72 @@
+// importing componants styling file
+@import "./componants/player";
+@import "./componants/song";
+@import "./componants/library";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.5); // only work in firefox;
+}
+*::-webkit-scrollbar {
+  width: 7px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #90a19d83;
+  border: transparent;
+  border-radius: 20px;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Poppns", sans-serif;
+  box-sizing: inherit;
+}
+.app {
+  display: flex;
+}
+.music-player {
+  order: 1;
+}
+.library {
+  flex: 0 0 0%;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 0.2s ease;
+  &.active {
+    flex: 0 0 30%;
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+nav {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  h1 {
+    font-size: 3.2rem;
+    font-weight: 300;
+  }
+  button {
+    border: 1px solid darkslategrey;
+    background-color: transparent;
+    padding: 1.4rem 2.8rem;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: darkslategrey;
+
+    &:hover {
+      background-color: darkslategrey;
+      color: #fff;
+    }
+  }
+}
